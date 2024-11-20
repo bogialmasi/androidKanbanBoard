@@ -9,4 +9,5 @@
     <string name="add_new_todo_item">Add new TODO item!</string>
     <string name="write_something_here">What are you planning to do?</string>
     <string name="add">ADD</string>
+    <string name="text">text for testing</string>
 </resources>
