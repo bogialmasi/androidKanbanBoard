@@ -2,6 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/design_default_color_secondary"
     android:layout_height="match_parent"
     android:id="@+id/done_layout"
     tools:context=".fragments.DoneFragment">
@@ -11,6 +12,7 @@
         android:layout_height="match_parent"
         android:scrollbars="vertical"
         android:id="@+id/done_recycler_view"
+        tools:listitem="@layout/list_item"
         />
 
 </FrameLayout>

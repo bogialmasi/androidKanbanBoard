@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/design_default_color_error"
     android:id="@+id/doing_layout"
     tools:context=".fragments.DoingFragment">
 
@@ -11,6 +12,7 @@
         android:layout_height="match_parent"
         android:scrollbars="vertical"
         android:id="@+id/doing_recycler_view"
+        tools:listitem="@layout/list_item"
         />
 
 </FrameLayout>
