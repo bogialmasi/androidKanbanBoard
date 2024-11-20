@@ -7,13 +7,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ListView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.LayoutManager
-import com.example.kanban.AddListItem
+import com.example.kanban.activities.AddListItem
 import com.example.kanban.R
-import com.example.kanban.adapter.KanbanItemAdapter
+import com.example.kanban.adapter.RecyclerAdapter
 import com.example.kanban.data.MyDBHelper
 
 class TodoFragment : Fragment() {
@@ -27,7 +25,7 @@ class TodoFragment : Fragment() {
         val button: View = contentView.findViewById(R.id.fab_button)
         val todoDataSet = MyDBHelper(context).readKanbanItemsByList(1)
         recView.layoutManager = LinearLayoutManager(context)
-        recView.adapter = KanbanItemAdapter(context, todoDataSet)
+        recView.adapter = RecyclerAdapter(context, todoDataSet)
         button.setOnClickListener {
             // REDIRECTING to AddListItem to create new list item
             val intent = Intent(context, AddListItem::class.java)

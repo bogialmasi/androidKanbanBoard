@@ -1,14 +1,16 @@
-package com.example.kanban
+package com.example.kanban.activities
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
+import com.example.kanban.R
+import com.example.kanban.adapter.RecyclerAdapter
 import com.example.kanban.adapter.ViewPagerAdapter
 import com.example.kanban.databinding.ActivityMainBinding
+import com.example.kanban.model.KanbanItem
 import com.google.android.material.tabs.TabLayout
 
 class MainActivity : AppCompatActivity() {
