@@ -1,7 +1,11 @@
-package com.example.kanban
+package com.example.kanban.adapter
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.example.kanban.MainActivity
+import com.example.kanban.fragments.DoingFragment
+import com.example.kanban.fragments.DoneFragment
+import com.example.kanban.fragments.TodoFragment
 
 class ViewPagerAdapter(fragment: MainActivity) : FragmentStateAdapter(fragment) {
     override fun getItemCount(): Int {
