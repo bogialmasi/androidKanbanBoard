@@ -31,7 +31,7 @@ class AddListItem : AppCompatActivity() {
         val intent = Intent(this, MainActivity::class.java)
         addListItemBtn.setOnClickListener{
             // BY DEFAULT this item will get STATE 1 and go into to do list
-            MyDBHelper(this).addKanbanItem(addListItemContent.toString())
+            MyDBHelper(this).addKanbanItem(addListItemContent.text.toString())
             // after the new item is added, main activity starts again
             startActivity(intent)
         }

@@ -24,7 +24,7 @@ class KanbanItemAdapter(val context: Context?, val dataSet: List<KanbanItem>) :
 
     override fun onBindViewHolder(holder: KanbanItemAdapter.ItemViewHolder, position: Int) {
         val item = dataSet[position]
-        //holder.textView.text = context.resources.getStringArray(R.array.)
+        holder.textView.text = item.content
     }
 
     override fun getItemCount(): Int {
