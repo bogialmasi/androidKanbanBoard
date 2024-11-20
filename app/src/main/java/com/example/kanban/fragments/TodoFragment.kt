@@ -1,4 +1,4 @@
-package com.example.kanban
+package com.example.kanban.fragments
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -8,6 +8,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ListView
+import com.example.kanban.AddListItem
+import com.example.kanban.R
 
 class TodoFragment : Fragment() {
     @SuppressLint("MissingInflatedId")
