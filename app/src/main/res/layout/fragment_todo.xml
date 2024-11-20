@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:id="@+id/todo_layout"
-    android:background="@color/design_default_color_primary"
     android:layout_height="match_parent"
     tools:context=".fragments.TodoFragment">
     <com.google.android.material.floatingactionbutton.FloatingActionButton
