@@ -9,8 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.kanban.R
 import com.example.kanban.model.KanbanItem
 
-class KanbanItemAdapter(private val context: Context,
-                  private val dataSet: List<KanbanItem>) :
+class KanbanItemAdapter(val context: Context?, val dataSet: List<KanbanItem>) :
     RecyclerView.Adapter<KanbanItemAdapter.ItemViewHolder>()
 
 {
