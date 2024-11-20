@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Kanban Board</string>
     <string name="new_item">ÚJ</string>
     <string name="add_new_todo_item">Új elem hozzáadása</string>
-    <string name="write_something_here">Írjon ide valamit...</string>
+    <string name="write_something_here">Mit szeretne csinálni?</string>
     <string name="add">HOZZÁAD</string>
 </resources>

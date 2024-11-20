@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:id="@+id/todo_layout"
     android:layout_height="match_parent"
-    tools:context=".TodoFragment">
+    tools:context=".fragments.TodoFragment">
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_button"
         android:layout_width="wrap_content"
@@ -13,9 +13,11 @@
         android:src="@drawable/add"
         android:contentDescription="@string/new_item"
         android:layout_margin="16dp" />
-    <ListView
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/todo_list"/>
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        android:id="@+id/todo_recycler_view"
+        />
 
 </FrameLayout>

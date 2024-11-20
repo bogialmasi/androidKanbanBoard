@@ -4,11 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/done_layout"
-    tools:context=".DoneFragment">
+    tools:context=".fragments.DoneFragment">
 
-    <ListView
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/done_list"/>
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        android:id="@+id/todo_recycler_view"
+        />
 
 </FrameLayout>

@@ -7,6 +7,6 @@
     <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <string name="new_item">NEW</string>
     <string name="add_new_todo_item">Add new TODO item!</string>
-    <string name="write_something_here">Write something here...</string>
+    <string name="write_something_here">What are you planning to do?</string>
     <string name="add">ADD</string>
 </resources>
