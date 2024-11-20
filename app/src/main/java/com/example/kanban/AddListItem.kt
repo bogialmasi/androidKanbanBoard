@@ -1,13 +1,17 @@
 package com.example.kanban
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.EditText
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.kanban.data.MyDBHelper
+import com.example.kanban.fragments.TodoFragment
 
 class AddListItem : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
@@ -20,16 +24,16 @@ class AddListItem : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
         // TODO create list of todo items + adapter
-        // LIST FRAGMENT
 
         val addListItemBtn: Button = findViewById(R.id.new_item_button)
-        addListItemBtn.setOnClickListener({
-            // TODO save new item into list + SQLite DB
-        })
-
-        // TODO if item is saved, redirect back to todo
-
+        val addListItemContent : EditText = findViewById(R.id.new_item_edittext)
+        val intent = Intent(this, MainActivity::class.java)
+        addListItemBtn.setOnClickListener{
+            // BY DEFAULT this item will get STATE 1 and go into to do list
+            MyDBHelper(this).addKanbanItem(addListItemContent.toString())
+            // after the new item is added, main activity starts again
+            startActivity(intent)
+        }
     }
 }
