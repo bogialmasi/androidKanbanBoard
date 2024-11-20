@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ListView
+import androidx.recyclerview.widget.RecyclerView
 import com.example.kanban.R
 
 class DoneFragment : Fragment() {
@@ -14,7 +15,7 @@ class DoneFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val contentView = inflater.inflate(R.layout.fragment_done, container, false)
-        val listView: ListView = contentView.findViewById(R.id.done_list)
+        val recView: RecyclerView = contentView.findViewById(R.id.done_recycler_view)
         return contentView
     }
 }
