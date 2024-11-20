@@ -11,6 +11,8 @@ import android.widget.ListView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kanban.AddListItem
 import com.example.kanban.R
+import com.example.kanban.adapter.KanbanItemAdapter
+import com.example.kanban.data.MyDBHelper
 
 class TodoFragment : Fragment() {
     @SuppressLint("MissingInflatedId")
@@ -21,6 +23,8 @@ class TodoFragment : Fragment() {
         val contentView = inflater.inflate(R.layout.fragment_todo, container, false)
         val recView: RecyclerView = contentView.findViewById(R.id.todo_recycler_view)
         val button: View = contentView.findViewById(R.id.fab_button)
+        val todoDataSet = MyDBHelper(context).readKanbanItemsByList(2)
+        recView.adapter = KanbanItemAdapter(context, todoDataSet)
         button.setOnClickListener {
             // REDIRECTING to AddListItem to create new list item
             val intent = Intent(context, AddListItem::class.java)

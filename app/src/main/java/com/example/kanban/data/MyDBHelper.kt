@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import com.example.kanban.model.KanbanItem
 
-class MyDBHelper(context: Context) : SQLiteOpenHelper(context,  "KANBANDB", null, 1) {
+class MyDBHelper(context: Context?) : SQLiteOpenHelper(context,  "KANBANDB", null, 1) {
     override fun onCreate(db: SQLiteDatabase?) {
         // CREATING DB
         db?.execSQL("CREATE TABLE KANBANDB(ID INTEGER PRIMARY KEY AUTOINCREMENT, CONTENT TEXT, STATE INTEGER)")
@@ -58,6 +58,24 @@ class MyDBHelper(context: Context) : SQLiteOpenHelper(context,  "KANBANDB", null
     fun readKanbanItems(): MutableList<KanbanItem> {
         val dataList = mutableListOf<KanbanItem>()
         val cursor : Cursor = readableDatabase.query("KANBANDB", null, null, null, null, null, null)
+        with(cursor){
+            while(moveToNext()){
+                val id = getInt(getColumnIndexOrThrow("ID"))
+                val content = getString(getColumnIndexOrThrow("CONTENT"))
+                val state = getInt(getColumnIndexOrThrow("STATE"))
+
+                dataList.add(KanbanItem(id, content, state))
+            }
+        }
+        cursor.close()
+        return dataList
+    }
+
+    // read only the values of ONE list
+    fun readKanbanItemsByList(stateId: Int): MutableList<KanbanItem> {
+        val dataList = mutableListOf<KanbanItem>()
+        val cursor : Cursor = readableDatabase.query("KANBANDB", null, "state=?",
+            arrayOf(stateId.toString()), null, null, null)
         with(cursor){
             while(moveToNext()){
                 val id = getInt(getColumnIndexOrThrow("ID"))
