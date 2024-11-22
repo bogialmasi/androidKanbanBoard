@@ -36,9 +36,7 @@ class MyDBHelper(context: Context?) : SQLiteOpenHelper(context,  "KANBANDB", nul
     fun updateKanbanItem(originalContent: String, originalState: Int, itemId: Int) {
         val values = ContentValues().apply {
             put("CONTENT", originalContent)
-            if(originalState<3){
-                put("STATE", originalState+1)
-            }
+            put("STATE", originalState+1)
         }
         val selection = "id=?"
         val selectionArgs = arrayOf(itemId.toString())
