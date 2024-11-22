@@ -22,7 +22,6 @@ class RecyclerAdapter(val context: Context?, val dataSet: MutableList<KanbanItem
 {
     class ItemViewHolder(private val view: View): RecyclerView.ViewHolder(view){
         val textView: TextView = view.findViewById(R.id.list_item_content)
-        val cardView: CardView = view.findViewById(R.id.list_item_layout)
         val progressBtn: Button = view.findViewById(R.id.list_item_progress_btn)
         val deleteButton: Button = view.findViewById(R.id.list_item_delete_btn)
     }
@@ -32,6 +31,7 @@ class RecyclerAdapter(val context: Context?, val dataSet: MutableList<KanbanItem
         return ItemViewHolder(adapterLayout)
     }
 
+    // This is where progress and delete button functions are handled
     @SuppressLint("NotifyDataSetChanged")
     override fun onBindViewHolder(holder: RecyclerAdapter.ItemViewHolder, position: Int) {
         val item = dataSet[position]
@@ -42,6 +42,11 @@ class RecyclerAdapter(val context: Context?, val dataSet: MutableList<KanbanItem
             notifyItemRemoved(position)
             notifyItemRangeChanged(position, dataSet.size - position)
             notifyDataSetChanged()
+            if(item.state == 3 ){
+                Toast.makeText(context, context!!.getString(R.string.toast_progress_over3), Toast.LENGTH_LONG).show()
+            }
+            else {
+                Toast.makeText(context, context!!.getString(R.string.toast_progressed), Toast.LENGTH_SHORT).show()}
         }
         holder.deleteButton.setOnClickListener {
             if (dataSet.size > position) {
@@ -50,6 +55,7 @@ class RecyclerAdapter(val context: Context?, val dataSet: MutableList<KanbanItem
                 notifyItemRemoved(position)
                 notifyItemRangeChanged(position, dataSet.size - position)
                 notifyDataSetChanged()
+                Toast.makeText(context, context!!.getString(R.string.toast_deleted), Toast.LENGTH_SHORT).show()
             }
         }
     }

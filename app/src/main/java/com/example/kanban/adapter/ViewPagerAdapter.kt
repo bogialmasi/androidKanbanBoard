@@ -12,6 +12,7 @@ class ViewPagerAdapter(fragment: MainActivity) : FragmentStateAdapter(fragment) 
         return 3
     }
 
+    // this is what determines which to do list is shown on main
     override fun createFragment(pos: Int): Fragment {
             return when (pos) {
                 0 -> TodoFragment()
