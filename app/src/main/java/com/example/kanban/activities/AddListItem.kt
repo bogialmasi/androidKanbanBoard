@@ -23,7 +23,6 @@ class AddListItem : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        // TODO create list of todo items + adapter
 
         val addListItemBtn: Button = findViewById(R.id.new_item_button)
         val addListItemContent : EditText = findViewById(R.id.new_item_edittext)
