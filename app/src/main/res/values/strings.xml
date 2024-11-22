@@ -12,4 +12,8 @@
     <string name="text">text for testing</string>
     <string name="progress">Progress</string>
     <string name="delete">Delete</string>
+    <string name="toast_progressed">Progressed</string>
+    <string name="toast_deleted">Deleted</string>
+    <string name="toast_item_added">Added item</string>
+    <string name="toast_progress_over3">Cannot be progressed further. Item deleted</string>
 </resources>

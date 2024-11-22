@@ -7,4 +7,8 @@
     <string name="text">text for testing</string>
     <string name="progress">Előrehaladás</string>
     <string name="delete">Törlés</string>
+    <string name="toast_progressed">Előrehaladva</string>
+    <string name="toast_deleted">Törölve</string>
+    <string name="toast_item_added">Hozzáadva</string>
+    <string name="toast_progress_over3">Nem tud tovább haladni. Listaelem törölve</string>
 </resources>
