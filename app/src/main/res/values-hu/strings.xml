@@ -5,4 +5,6 @@
     <string name="write_something_here">Mit szeretne csinálni?</string>
     <string name="add">HOZZÁAD</string>
     <string name="text">text for testing</string>
+    <string name="progress">Előrehaladás</string>
+    <string name="delete">Törlés</string>
 </resources>
