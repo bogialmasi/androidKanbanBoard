@@ -10,4 +10,6 @@
     <string name="write_something_here">What are you planning to do?</string>
     <string name="add">ADD</string>
     <string name="text">text for testing</string>
+    <string name="progress">Progress</string>
+    <string name="delete">Delete</string>
 </resources>
