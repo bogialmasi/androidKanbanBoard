@@ -16,7 +16,7 @@ import com.example.kanban.R
 import com.example.kanban.data.MyDBHelper
 import com.example.kanban.model.KanbanItem
 
-class RecyclerAdapter(val context: Context?, val dataSet: List<KanbanItem>) :
+class RecyclerAdapter(val context: Context?, val dataSet: MutableList<KanbanItem>) :
     RecyclerView.Adapter<RecyclerAdapter.ItemViewHolder>()
 
 {
@@ -39,11 +39,16 @@ class RecyclerAdapter(val context: Context?, val dataSet: List<KanbanItem>) :
         holder.textView.text = item.content
         holder.progressBtn.setOnClickListener {
             MyDBHelper(context).updateKanbanItem(item.content, item.state, item.id)
+            val updatedItem = KanbanItem(item.id, item.content, item.state)
+            dataSet[position] = updatedItem
+            notifyItemChanged(position)
         }
         holder.deleteButton.setOnClickListener {
             if (dataSet.size > position) {
                 MyDBHelper(context).deleteKanbanItem(item.id)
+                dataSet.removeAt(position)
                 notifyItemRemoved(position)
+                notifyItemRangeChanged(position, dataSet.size - position)
             }
         }
     }
