@@ -32,18 +32,18 @@ class MyDBHelper(context: Context?) : SQLiteOpenHelper(context,  "KANBANDB", nul
         writableDatabase.insert("KANBANDB", null, values)
     }
 
-    // updates state of to do list item, content cannot be updated
-    // ONLY STATE 1 and 2 can be changed! STATE 3 can only be deleted
-    // this method will be used to move kanban items between lists, only forward
-    fun updateKanbanItem(originalState: Int, itemId: Int): Int {
+    // removes the item from the original list then adds it to the list it progresses into
+    fun updateKanbanItem(originalContent: String, originalState: Int, itemId: Int) {
         val values = ContentValues().apply {
-            if (originalState > 3) {
-                put("STATE", originalState + 1)
+            put("CONTENT", originalContent)
+            if(originalState<3){
+                put("STATE", originalState+1)
             }
         }
         val selection = "id=?"
         val selectionArgs = arrayOf(itemId.toString())
-        return writableDatabase.update("KANBANDB", values, selection, selectionArgs)
+        writableDatabase.delete("KANBANDB", selection, selectionArgs)
+        writableDatabase.insert("KANBANDB", null, values)
     }
 
     // deletes one item from the tododb
